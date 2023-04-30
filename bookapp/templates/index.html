@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leadway School Management System</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='stylesheets/main.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Leadway School Management System</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('create') }}">Add Student</a></li>
+          <li><a href="{{ url_for('delete') }}">Delete Student</a></li>
+          <li><a href="{{ url_for('view') }}">View Students</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Welcome to the Leadway School Management System!</h2>
+      <p>Please select an option from the menu above.</p>
+
+      <div class="container">
+        <table>
+          <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Student Status</th>
+          </tr>
+          {% for student in students %}
+          <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>{{ student[3] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Leadway School Management System</p>
+    </footer>
+  </body>
+</html>

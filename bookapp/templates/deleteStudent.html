@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete Students</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='stylesheets/main.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Delete Students</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('create') }}">Add Student</a></li>
+          <li><a href="{{ url_for('view') }}">View Students</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <form>
+        <h2>Delete Student</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter name" />
+
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" placeholder="Enter ID" />
+
+        <button type="submit" class="btn">Delete</button>
+      </form>
+    </div>
+  </body>
+</html>
